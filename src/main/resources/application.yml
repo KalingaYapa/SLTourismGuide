@@ -9,4 +9,11 @@ spring:
     url: jdbc:postgresql://localhost:5432/SLTourGuide
     username: postgres
     password: 199249
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database: postgresql
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
 
