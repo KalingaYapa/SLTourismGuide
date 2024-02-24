@@ -1,15 +1,16 @@
 server:
-  port: 8082
+  port: 8080
 
 spring:
   application:
     name: sltourguiderestapi
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/SLTourGuide
+    url: jdbc:postgresql://sltour-postgres:5432/SLTourGuide
     username: postgres
     password: 199249
   jpa:
+#    generate-ddl: true
     hibernate:
       ddl-auto: create-drop
     database: postgresql
