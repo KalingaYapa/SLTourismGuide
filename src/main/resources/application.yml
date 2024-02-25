@@ -13,7 +13,7 @@ spring:
   jpa:
 #    generate-ddl: true
     hibernate:
-      ddl-auto: create-drop # this is usually using for unit testing , drops everything after operations completes
+      ddl-auto: update # create-drop this is usually using for unit testing , drops everything after operations completes
     database: postgresql
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
