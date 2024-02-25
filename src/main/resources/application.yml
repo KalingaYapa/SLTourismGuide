@@ -6,8 +6,8 @@ spring:
     name: sltourguiderestapi
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://host.docker.internal:5432/SLTourGuide # in /etc/hosts file in Host server, add host server IP recode like 192.168.100.11 host.docker.internal
-#    url: jdbc:postgresql://sltour-postgres:5432/SLTourGuide # -> when postgres running on separate docker container --name sltour-postgres , both containers should be in same docker network
+#    url: jdbc:postgresql://host.docker.internal:5432/SLTourGuide # in /etc/hosts file in Host server, add host server IP recode like 192.168.100.11 host.docker.internal
+    url: jdbc:postgresql://sltour-postgres:5432/SLTourGuide # -> when postgres running on separate docker container --name sltour-postgres , both containers should be in same docker network
     username: postgres
     password: 199249
   jpa:
