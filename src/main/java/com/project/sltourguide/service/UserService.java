@@ -1,6 +1,6 @@
 package com.project.sltourguide.service;
 
-import com.project.sltourguide.entity.SLTourUser;
+import com.project.sltourguide.entity.User;
 import com.project.sltourguide.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -11,11 +11,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    public void saveUser(SLTourUser user) {
+    public void saveUser(User user) {
         userRepository.save(user);
     }
 
-    public List<SLTourUser> getUsers() {
+    public List<User> getUsers() {
        return userRepository.findAll();
     }
 }

@@ -1,6 +1,6 @@
 package com.project.sltourguide.controller;
 
-import com.project.sltourguide.entity.SLTourUser;
+import com.project.sltourguide.entity.User;
 import com.project.sltourguide.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,12 +18,13 @@ public class UserController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveUser(@RequestBody SLTourUser user) {
+    public void saveUser(@RequestBody User user) {
         userService.saveUser(user);
     }
 
     @GetMapping
-    public ResponseEntity<List<SLTourUser>> findAllUsers() {
+    @CrossOrigin
+    public ResponseEntity<List<User>> findAllUsers() {
         return ResponseEntity.ok(userService.getUsers());
     }
 }
