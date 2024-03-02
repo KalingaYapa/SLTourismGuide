@@ -16,18 +16,21 @@ import java.sql.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "room")
-public class Room {
+@Table(name = "hotel")
+public class Hotel {
     @Id
-    @Column(name = "room_id")
+    @Column(name = "hotel_id")
     private long roomId;
-    @Column(name = "room_name")
+    @Column(name = "hotel_name")
     private  String Name;
-    @Column(name = "room_type")
-    private  int roomType;
+    @Column(name = "hotel_desc",columnDefinition = "text")
+    private  String roomType;
     @Column(name="last_updated_time")
     private Date lastUpdatedTime;
     @Column(name="created_time")
     private Date createdTime;
-
+    @Column(name="address",columnDefinition = "text")
+    private  String address;
+    @Column(name="location_url",columnDefinition = "text")
+    private  String locationURL;
 }

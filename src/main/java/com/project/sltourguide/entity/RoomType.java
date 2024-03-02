@@ -16,18 +16,12 @@ import java.sql.Date;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "room")
-public class Room {
+@Table(name = "room_type")
+public class RoomType {
     @Id
-    @Column(name = "room_id")
+    @Column(name = "room_type_id")
     private long roomId;
-    @Column(name = "room_name")
+    @Column(name = "room_type_desc")
     private  String Name;
-    @Column(name = "room_type")
-    private  int roomType;
-    @Column(name="last_updated_time")
-    private Date lastUpdatedTime;
-    @Column(name="created_time")
-    private Date createdTime;
 
 }
