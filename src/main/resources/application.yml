@@ -12,10 +12,12 @@ spring:
     url: jdbc:postgresql://192.168.100.11:5433/SLTourGuide # connecting to database which run in docker container
     username: postgres
     password: 199249
+    platform: postgresql
+    continueOnError: true # this is  for disable the spring failfast  feature ,[ if the sql scripts cause exceptions the application will fail to start.]
   jpa:
 #    generate-ddl: true
     hibernate:
-      ddl-auto: update # create-drop this is usually using for unit testing , drops everything after operations completes
+      ddl-auto: update # create-drop this is usually using for unit testing , drops everything after operations completes [ none,update,create-update,validate]
     database: postgresql
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
