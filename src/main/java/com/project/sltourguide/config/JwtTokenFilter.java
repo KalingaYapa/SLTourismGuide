@@ -22,7 +22,7 @@ import java.io.IOException;
 @Slf4j
 @Component
 @RequiredArgsConstructor
-public class JwtTokenFilter extends OncePerRequestFilter {
+public class JwtTokenFilter extends OncePerRequestFilter { // every request first reach this
     private final JwtUtil jwtUtil;
     private final UserDetailsService userDetailsService;
 
@@ -30,14 +30,11 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     protected void doFilterInternal(@NonNull HttpServletRequest request,@NonNull HttpServletResponse response,@NonNull FilterChain filterChain)
             throws IOException, ServletException {
         log.info("start security filer chaining");
-        if (request.getServletPath().contains("/api/v1/auth")) {
-            filterChain.doFilter(request, response);
-            return;
-        }
         String token = obtainToken(request);
         String email;
         if (token == null) {
-            throw new MissingJwtTokenException("missing JWT token");
+            filterChain.doFilter(request, response);
+            return;
         }
         try {
             email = jwtUtil.extractUsername(token);
